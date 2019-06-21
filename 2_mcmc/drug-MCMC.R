@@ -1,6 +1,6 @@
 ## SETUP
 rm(list=ls()) 
-# setwd("2_mcmc")
+setwd("2_mcmc")
 library("rstan")
 options(mc.cores = parallel::detectCores())
 rstan_options(auto_write = TRUE)
@@ -8,6 +8,7 @@ rstan_options(auto_write = TRUE)
 # data in separate list to be passed on to Stan (usually better)
 data <- list(
             a = 9.2, b = 13.8, # prior parameters
+            y = 15,
             m = 20, # number of trials
             n = 40, # future number of trials
             ncrit = 25) # critical value of future successes
