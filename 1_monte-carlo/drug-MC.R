@@ -18,7 +18,7 @@ drugMC.fit <- stan(file = 'drug-MC.stan', iter=10000, chains=1, data=data,
                    control=list(adapt_delta=0.99), seed=2019)
 
 # useful commands for quick overview
-print(drugMC.fit)  # a rough summary
+print(drugMC.fit, digits=3)  # a rough summary
 plot(drugMC.fit)   # a visual representation
 
 # more plotting examples

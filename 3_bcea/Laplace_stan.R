@@ -20,7 +20,7 @@ laplace.fit <- stan(file=filein, iter=10000, warmup=4500, chains=2,
                     seed=2019, thin=1)
 
 # summary results
-print(laplace.fit)
+print(laplace.fit, digits=3)
 
 # histogram
 library("bayesplot")

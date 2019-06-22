@@ -17,7 +17,7 @@ coins.fit <- stan(file = 'coins.stan', iter=1000, chains=1, data=data,
                   warmup=0, algorithm="Fixed_param", seed=2019)
 
 # useful commands for quick overview
-print(coins.fit)  # a rough summary
+print(coins.fit, digits=3)  # a rough summary
 plot(coins.fit)   # a visual representation
 
 chain <- 1
