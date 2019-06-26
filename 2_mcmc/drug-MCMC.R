@@ -1,6 +1,6 @@
 ## SETUP
 rm(list=ls()) 
-setwd("2_mcmc")
+# setwd("2_mcmc")
 library("rstan")
 options(mc.cores = parallel::detectCores())
 rstan_options(auto_write = TRUE)
