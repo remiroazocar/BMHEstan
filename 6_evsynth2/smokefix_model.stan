@@ -60,8 +60,7 @@ generated quantities {
 		}
 	}	
 	// Absolute probability of quitting successfully under each intervention
-	pq[1] = 0; // dummy
-	for (i in 2:nt) {
+	for (i in 1:nt) {
 		pq[i] = inv_logit(alpha + d[i]);
 	}
 }
