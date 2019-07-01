@@ -50,15 +50,14 @@ generated quantities {
 	real o_r[nt,nt];
 	real pq[nt];
 	// odds ratios for all treatment comparisons
-	for (c in 1:nt) {
-	    o_r[c,c] = 1;
-	}
 	for (c in 1:(nt-1)) {
+	  o_r[c,c] = 1;
 	  for (k in (c+1):nt)  {
 		  o_r[c,k] = exp(d[c]-d[k]);
 		  o_r[k,c] = 1/o_r[c,k];
 		}
 	}	
+	o_r[nt,nt] = 1;
 	// Absolute probability of quitting successfully under each intervention
 	for (i in 1:nt) {
 		pq[i] = inv_logit(alpha + d[i]);
